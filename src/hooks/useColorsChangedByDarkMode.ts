@@ -1,20 +1,13 @@
 import { useMemo } from "react";
+import { DefaultTheme } from "styled-components/native";
 import useIsDarkMode from "./useIsDarkMode";
 
-type colorList = {
-  backgroundColor: string;
-  textColor: string;
-  borderTopColor: string;
-  tabBarActiveTintColor: string;
-};
-
-type useColorsChangedByDarkModeType = () => colorList;
+type useColorsChangedByDarkModeType = () => DefaultTheme;
 
 const useColorsChangedByDarkMode: useColorsChangedByDarkModeType = () => {
 
   const isDarkMode = useIsDarkMode();
 
-  // useMemo 쓰던지
   const colors = useMemo(
     () => getColorsChangedByDarkMode(isDarkMode),
     [isDarkMode]
@@ -26,7 +19,7 @@ const useColorsChangedByDarkMode: useColorsChangedByDarkModeType = () => {
 export default useColorsChangedByDarkMode;
 
 
-type getColorsChangedByDarkModeType = (isDarkMode:boolean) => colorList;
+type getColorsChangedByDarkModeType = (isDarkMode:boolean) => DefaultTheme;
 
 const getColorsChangedByDarkMode: getColorsChangedByDarkModeType = (isDarkMode) => isDarkMode ?
     {
