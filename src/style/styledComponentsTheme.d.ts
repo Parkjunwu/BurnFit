@@ -7,4 +7,4 @@ declare module 'styled-components/native' {
     borderTopColor: string;
     tabBarActiveTintColor: string;
   }
-}
+};

@@ -63,7 +63,7 @@ const MainNav = () => {
         }}
       />
     </Tab.Navigator>
-  )
+  );
 };
 
 export default MainNav;
